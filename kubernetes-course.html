@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprehensive Kubernetes Course - From Beginner to Advanced</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #2E3A59;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2E3A59;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .course-overview {
+            background-color: #F4F5F7;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .module-container {
+            display: grid;
+            gap: 30px;
+        }
+
+        .module {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .module-indicator {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid #000;
+            border-right: 2px solid #000;
+            transition: transform 0.3s ease;
+        }
+
+        .module-content {
+            display: none;
+        }
+
+        .module-content.show {
+            display: block;
+        }
+
+        .highlight {
+            color: #FF6363;
+            font-weight: bold;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .table th {
+            background-color: #F4F5F7;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="docker-logo.png" alt="Docker Logo" class="logo">
+    <img src="kubernetes-logo.png" alt="Kubernetes Logo" class="logo">
+    <img src="helm-logo.png" alt="Helm Logo" class="logo">
+    <h1 class="text-3xl font-bold">Comprehensive Kubernetes Course</h1>
+    <h2 class="text-xl">From Beginner to Advanced</h2>
+</header>
+
+<div class="container">
+
+    <div class="course-overview mt-8">
+        <h2 class="text-2xl font-bold mb-4">Why Choose Kubernetes?</h2>
+        <ul class="list-disc pl-8">
+            <li><span class="highlight">Transforming the Cloud Native Landscape:</span> Experience how Kubernetes has
+                revolutionized the cloud native technology landscape by providing a powerful and flexible platform for
+                container orchestration. Learn how it has transformed the way applications are deployed, scaled, and
+                managed in modern cloud environments.
+            </li>
+            <li><span class="highlight">Industry-Backed Standardization and Community-Driven Innovation:</span> Gain
+                confidence in Kubernetes as the industry standard for container orchestration, backed by a vibrant
+                community and the Cloud Native Computing Foundation (CNCF). Explore its continuous development,
+                security, and adherence to industry best practices and standards.
+            </li>
+            <li><span class="highlight">Wide Industry Adoption and Ecosystem:</span> Discover how Kubernetes has gained
+                widespread adoption across industries, from small startups to large enterprises. Explore its rich
+                ecosystem of technologies, tools, and services that make it the go-to platform for managing
+                containerized applications. Mastering Kubernetes opens doors to exciting career opportunities in the
+                fast-growing cloud native space.
+            </li>
+            <li><span class="highlight">Jobs and Future Employment Trends:</span> Capitalize on the high demand for
+                Kubernetes professionals in the job market. Uncover the significant increase in job postings requiring
+                Kubernetes skills and how acquiring Kubernetes expertise can future-proof your career in the cloud
+                native landscape.
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="course-overview">
+        <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
+        <p>Are you ready to kick-start your Kubernetes journey? Join us and dive deep into the world of Kubernetes with
+            our meticulously curated course designed to turn you into a Kubernetes expert. Whether you're a beginner
+            looking to step into the sphere of container orchestration or a professional seeking to augment your skills,
+            this course will cater to your needs.</p>
+        <ul class="list-disc pl-8">
+            <li><span class="highlight">Comprehensive Learning: </span> Our course syllabus is a perfect blend of theory
+                and practice, covering an
+                extensive range of topics from 'Introduction to Kubernetes' to 'Advanced Kubernetes,' including every
+                critical concept you need to know. Our curriculum aligns with CKAD exam objectives, making it an
+                excellent resource for aspirants aiming for certification.
+            </li>
+            <li><span class="highlight">Practical Approach: </span>Unlike typical courses, we don't just stop at theory.
+                We understand the power of
+                hands-on learning. We've integrated fully-functional labs throughout our course modules. You'll gain
+                practical knowledge on Kubernetes architecture, deployment strategies, network policies, security
+                features, and much more.
+            </li>
+            <li><span class="highlight">Personalized Assistance: </span>To ensure a smooth learning experience, we're
+                going one step further. We will
+                allocate a dedicated lab assistant to every group of 3 students. They'll guide you through the hands-on
+                tasks, address your queries, and help you overcome challenges. It's like having a personal Kubernetes
+                coach!
+            </li>
+            <li><span class="highlight">Real-World Scenarios: </span>Our course content and lab exercises are built
+                around real-world scenarios. This
+                approach helps you understand the implementation of Kubernetes concepts in actual production
+                environments.
+            </li>
+            <li><span class="highlight">Future-Proof Your Career: </span>Kubernetes has become an industry standard for
+                container orchestration, and
+                its popularity is only growing. By mastering Kubernetes, you're not just adding a skill to your resume,
+                you're future-proofing your career!
+            </li>
+            <li><span class="highlight">Community of Learners: </span>By joining our course, you become a part of our
+                vibrant learner community. Engage
+                in stimulating discussions, share insights, and build networks with other Kubernetes enthusiasts.
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8">Course Modules</h2>
+
+    <div class="module-container">
+        <div class="module">
+            <h3 class="module-title">Module 1: Introduction to Kubernetes (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Understand the key concepts and advantages of Kubernetes</li>
+                    <li>Explore the architecture of Kubernetes</li>
+                    <li>Identify the different components of Kubernetes (Master Node, Worker Node, etc.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 2: Setting up Kubernetes Environment (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Install and set up a Kubernetes environment</li>
+                    <li>Configure the necessary components for a functional Kubernetes cluster</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Add the remaining modules here -->
+        <div class="module">
+            <h3 class="module-title">Module 3: Kubernetes Architecture and Components (4 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Learn about the architecture and components of Kubernetes</li>
+                    <li>Understand the role of the control plane and worker nodes</li>
+                    <li>Explore the Kubernetes API and its functionalities</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 4: Deploying Applications with Kubernetes (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Learn different methods to deploy applications in Kubernetes</li>
+                    <li>Use Kubernetes manifests and YAML files to define application resources</li>
+                    <li>Deploy applications using Kubernetes Deployment and StatefulSet</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 5: Scaling and Load Balancing in Kubernetes (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Explore scaling options for Kubernetes applications</li>
+                    <li>Learn about Horizontal Pod Autoscaling (HPA)</li>
+                    <li>Configure load balancing for distributing traffic to application pods</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 6: Service Discovery and Networking in Kubernetes (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Understand Kubernetes service discovery mechanisms</li>
+                    <li>Configure and use Services to expose applications</li>
+                    <li>Explore networking concepts and solutions in Kubernetes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 7: Kubernetes Storage and Persistent Volumes (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Learn about different storage options in Kubernetes</li>
+                    <li>Configure and use Persistent Volumes (PV) and Persistent Volume Claims (PVC)</li>
+                    <li>Implement data persistence for stateful applications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 8: Kubernetes Security and RBAC (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Understand Kubernetes security concepts and best practices</li>
+                    <li>Implement Role-Based Access Control (RBAC)</li>
+                    <li>Secure Kubernetes cluster components and applications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 9: Monitoring and Logging in Kubernetes (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Explore monitoring and observability tools in Kubernetes</li>
+                    <li>Configure logging and metrics collection for applications</li>
+                    <li>Understand the use of Kubernetes Dashboard and other monitoring solutions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 10: Advanced Networking and Ingress (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Configure advanced networking features in Kubernetes</li>
+                    <li>Implement Ingress controllers for routing external traffic</li>
+                    <li>Secure applications using SSL/TLS termination and authentication</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 11: Kubernetes Operators (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Understand the concept of Kubernetes Operators</li>
+                    <li>Create custom operators for managing complex applications</li>
+                    <li>Deploy and manage applications using existing operator frameworks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 12: CI/CD and Deployment Strategies (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Implement CI/CD pipelines for Kubernetes applications</li>
+                    <li>Explore deployment strategies such as rolling updates and blue-green deployments</li>
+                    <li>Integrate Kubernetes with popular CI/CD tools like Jenkins and GitLab</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 13: Configuring and Managing Kubernetes Cluster (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Manage and configure Kubernetes cluster resources</li>
+                    <li>Use tools like kubeadm and kops for cluster provisioning</li>
+                    <li>Implement cluster upgrades and node maintenance procedures</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 14: Kubernetes Federation and Multi-Cluster Management (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Explore Kubernetes federation for managing multiple clusters</li>
+                    <li>Implement multi-cluster services and workload distribution</li>
+                    <li>Understand the challenges and best practices of multi-cluster management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 15: Kubernetes Autoscaling and Resource Management (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Configure and manage autoscaling of Kubernetes resources</li>
+                    <li>Optimize resource allocation and utilization in Kubernetes</li>
+                    <li>Use Kubernetes resource quotas and limits for efficient resource management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 16: Stateful Applications and StatefulSets (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Understand the challenges of managing stateful applications in Kubernetes</li>
+                    <li>Deploy and manage stateful applications using StatefulSets</li>
+                    <li>Configure persistent storage and data replication for stateful workloads</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 17: Backup and Disaster Recovery in Kubernetes (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Implement backup and restore mechanisms for Kubernetes applications</li>
+                    <li>Design and implement disaster recovery strategies for Kubernetes clusters</li>
+                    <li>Use tools and solutions for data protection and cluster resilience</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 18: Kubernetes Governance and Policy Management (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Implement governance policies and resource quotas in Kubernetes</li>
+                    <li>Manage access controls and permissions using Kubernetes Security Contexts</li>
+                    <li>Enforce policies for cluster-wide resource management and usage</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 19: Advanced Kubernetes Networking (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Explore advanced networking concepts and solutions in Kubernetes</li>
+                    <li>Implement network policies for securing and isolating application traffic</li>
+                    <li>Integrate Kubernetes with external networking solutions and plugins</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 20: Kubernetes Security Best Practices (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Implement security best practices for Kubernetes clusters</li>
+                    <li>Secure container images and implement image scanning</li>
+                    <li>Use security tools and solutions for vulnerability management and threat detection</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 21: Kubernetes Monitoring and Performance Optimization (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Monitor Kubernetes clusters and applications using Prometheus and Grafana</li>
+                    <li>Optimize cluster performance and resource utilization</li>
+                    <li>Troubleshoot and resolve performance issues in Kubernetes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 22: Kubernetes and Cloud Providers (3 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Understand the integration of Kubernetes with major cloud providers</li>
+                    <li>Deploy and manage Kubernetes clusters on cloud platforms</li>
+                    <li>Use cloud-native services and features with Kubernetes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <h3 class="module-title">Module 23: Kubernetes Best Practices and Troubleshooting (2 hours)<span
+                    class="module-indicator"></span></h3>
+            <div class="module-content">
+                <ul class="list-disc pl-8">
+                    <li>Implement best practices for deploying and managing Kubernetes applications</li>
+                    <li>Resolve common issues and errors in Kubernetes clusters</li>
+                    <li>Apply troubleshooting techniques for debugging and performance optimization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8">CKAD Exam Objectives Coverage Matrix</h2>
+
+
+    <div class="container">
+        <div class="module-container">
+            <div class="module">
+                <table class="table-auto w-full">
+                    <thead>
+                    <tr>
+                        <th class="px-4 py-2">CKAD Exam Categories</th>
+                        <th class="px-4 py-2">CKAD Exam Objective</th>
+                        <th class="px-4 py-2">Course Module & Subtopics</th>
+                        <th class="px-4 py-2">Comments</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th class="border px-4 py-2" rowspan="4">Application Design and Build (20%)</th>
+                        <td class="border px-4 py-2">Define, build and modify container images</td>
+                        <td class="border px-4 py-2">Module 17: Working with Container Images</td>
+                        <td class="border px-4 py-2">Dedicated module to cover container images, their definitions,
+                            creation, and modifications
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Understand Jobs and CronJobs</td>
+                        <td class="border px-4 py-2">Module 18: Kubernetes Jobs and CronJobs</td>
+                        <td class="border px-4 py-2">Detailed exploration of Jobs and CronJobs in Kubernetes</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Understand multi-container Pod design patterns (e.g. sidecar, init
+                            and others)
+                        </td>
+                        <td class="border px-4 py-2">Module 3: Kubernetes Workloads - Pods</td>
+                        <td class="border px-4 py-2">Coverage includes understanding and working with multi-container
+                            pod design patterns
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Utilize persistent and ephemeral volumes</td>
+                        <td class="border px-4 py-2">Module 5: Kubernetes Storage - Volumes and Persistent Volumes</td>
+                        <td class="border px-4 py-2">Comprehensive module dedicated to Kubernetes storage concepts and
+                            usage
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="border px-4 py-2" rowspan="3">Application Deployment (20%)</th>
+                        <td class="border px-4 py-2">Use Kubernetes primitives to implement common deployment strategies
+                            (e.g. blue/green or canary)
+                        </td>
+                        <td class="border px-4 py-2">Module 19: Kubernetes Deployment Strategies</td>
+                        <td class="border px-4 py-2">Module focuses on deployment strategies with practical examples
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Understand Deployments and how to perform rolling updates</td>
+                        <td class="border px-4 py-2">Module 6: Workloads - Deployments, ReplicaSets, and StatefulSets
+                        </td>
+                        <td class="border px-4 py-2">This module covers deployments and how to perform rolling updates
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Use the Helm package manager to deploy existing packages</td>
+                        <td class="border px-4 py-2">Module 11: Helm</td>
+                        <td class="border px-4 py-2">Helm, a package manager for Kubernetes, is covered in detail</td>
+                    </tr>
+                    <tr>
+                        <th class="border px-4 py-2" rowspan="4">Application Observability and Maintenance (15%)</th>
+                        <td class="border px-4 py-2">Understand API deprecations</td>
+                        <td class="border px-4 py-2">Module 20: API Deprecations in Kubernetes</td>
+                        <td class="border px-4 py-2">This module covers the crucial aspect of API deprecations in
+                            Kubernetes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Implement probes and health checks</td>
+                        <td class="border px-4 py-2">Module 21: Probes and Health Checks</td>
+                        <td class="border px-4 py-2">Understanding and implementing probes and health checks are covered
+                            here
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Use provided tools to monitor Kubernetes applications</td>
+                        <td class="border px-4 py-2">Module 12: Troubleshooting Kubernetes</td>
+                        <td class="border px-4 py-2">Module covers application monitoring using various tools</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Utilize container logs</td>
+                        <td class="border px-4 py-2">Module 12: Troubleshooting Kubernetes</td>
+                        <td class="border px-4 py-2">Understanding and utilization of container logs are covered</td>
+                    </tr>
+                    <tr>
+                        <th class="border px-4 py-2" rowspan="7">Application Environment, Configuration and Security
+                            (25%)
+                        </th>
+                        <td class="border px-4 py-2">Discover and use resources that extend Kubernetes (CRD)</td>
+                        <td class="border px-4 py-2">Module 15: Advanced Kubernetes</td>
+                        <td class="border px-4 py-2">Coverage includes understanding and using Custom Resource
+                            Definitions (CRDs)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Understand authentication, authorization and admission control</td>
+                        <td class="border px-4 py-2">Module 10: Kubernetes RBAC</td>
+                        <td class="border px-4 py-2">Module provides understanding of RBAC including authentication,
+                            authorization, and admission control
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Understanding and defining resource requirements, limits and
+                            quotas
+                        </td>
+                        <td class="border px-4 py-2">Module 22: Kubernetes Resource Management</td>
+                        <td class="border px-4 py-2">This module covers understanding and defining resource
+                            requirements, limits, and quotas
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Understand ConfigMaps</td>
+                        <td class="border px-4 py-2">Module 7: ConfigMaps and Secrets</td>
+                        <td class="border px-4 py-2">Understanding ConfigMaps is covered in this module</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Create &amp; consume Secrets</td>
+                        <td class="border px-4 py-2">Module 7: ConfigMaps and Secrets</td>
+                        <td class="border px-4 py-2">This module also covers the creation and consumption of Secrets
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Understand ServiceAccounts</td>
+                        <td class="border px-4 py-2">Module 23: Working with ServiceAccounts and SecurityContexts in
+                            Kubernetes
+                        </td>
+                        <td class="border px-4 py-2">Understanding and working with ServiceAccounts is covered</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Understand SecurityContexts</td>
+                        <td class="border px-4 py-2">Module 23: Working with ServiceAccounts and SecurityContexts in
+                            Kubernetes
+                        </td>
+                        <td class="border px-4 py-2">This module also covers understanding and using SecurityContexts
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="border px-4 py-2" rowspan="3">Services &amp; Networking (20%)</th>
+                        <td class="border px-4 py-2">Demonstrate basic understanding of NetworkPolicies</td>
+                        <td class="border px-4 py-2">Module 8: Kubernetes Networking</td>
+                        <td class="border px-4 py-2">This module covers understanding of NetworkPolicies</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Provide and troubleshoot access to applications via services</td>
+                        <td class="border px-4 py-2">Module 4: Kubernetes Services</td>
+                        <td class="border px-4 py-2">This module provides understanding and hands-on experience on
+                            services
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Use Ingress rules to expose applications</td>
+                        <td class="border px-4 py-2">Module 9: Ingress and Ingress Controllers</td>
+                        <td class="border px-4 py-2">The use of Ingress rules to expose applications is covered in this
+                            module
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-overview">
+        <h2 class="text-2xl font-bold mb-4">Our Kubernetes Masterclass</h2>
+        <p>Our Kubernetes Masterclass is a one-stop-shop for all your Kubernetes learning needs. With an extensive
+            curriculum covering the fundamentals to advanced topics, hands-on lab exercises, and dedicated personal
+            assistance, we've left no stone unturned to make this the most comprehensive Kubernetes course out
+            there.</p>
+        <p>Designed with meticulous attention to detail, our course is aligned with the CKAD exam objectives, making it
+            perfect for certification aspirants. It offers a blend of theoretical knowledge and practical skills, with
+            real-world scenarios that prepare you for professional challenges.</p>
+        <p>Your Kubernetes journey will be guided by experienced instructors and supported by our dedicated lab
+            assistants, ensuring a smooth and engaging learning experience. By joining our course, you're not just
+            acquiring a skill, you're future-proofing your career in a world where Kubernetes is the gold standard for
+            container orchestration.</p>
+        <p>So, are you ready to become a Kubernetes expert?</p>
+        <p>Don't let this opportunity slip away. Embrace the Kubernetes journey with us.</p>
+        <h3 class="text-xl font-bold">Enroll Now!</h3>
+        <p>Join us today and experience the most comprehensive, hands-on, and personalized Kubernetes training
+            available!</p>
+    </div>
+
+
+</div>
+
+<footer class="text-white py-4">
+    <div class="container mx-auto px-4">
+        <p>&copy; 2023 UniDev. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // JavaScript code for toggling module content
+    const moduleTitles = document.querySelectorAll('.module-title');
+
+    moduleTitles.forEach((title) => {
+        title.addEventListener('click', () => {
+            const moduleContent = title.nextElementSibling;
+            moduleContent.classList.toggle('show');
+        });
+    });
+</script>
+</body>
+</html>
